@@ -1,0 +1,23 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block javascript %}
+    <script src="{{ url('gantry-theme://js/simplecounter.js') }}"></script>
+    <script src="{{ url('gantry-theme://js/simplecounter.init.js') }}"></script>
+{% endblock %}
+
+{% block particle %}
+
+    <div class="g-simplecounter {{ particle.class|e }}">
+
+        {% if particle.title %}<h2 class="g-title">{{ particle.title|raw }}</h2>{% endif %}
+
+        <div class="g-simplecounter-content">
+            {{ particle.desc|raw }}
+        </div>
+
+        <div class="g-simplecounter-block">
+            <div class="g-simplecounter-calendar" id="g-{{ id }}" data-simplecounter-id="g-{{ id }}" data-simplecounter-year="{{ particle.year }}" data-simplecounter-month="{{ particle.month }}" data-simplecounter-date="{{ particle.date }}" data-simplecounter-daytext="{{ particle.daytext }}" data-simplecounter-daystext="{{ particle.daystext }}" data-simplecounter-hourtext="{{ particle.hourtext }}" data-simplecounter-hourstext="{{ particle.hourstext }}" data-simplecounter-minutetext="{{ particle.minutetext }}" data-simplecounter-minutestext="{{ particle.minutestext }}" data-simplecounter-secondtext="{{ particle.secondtext }}" data-simplecounter-secondstext="{{ particle.secondstext }}" ></div>
+        </div>
+    </div>
+
+{% endblock %}
